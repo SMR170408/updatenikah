@@ -1,0 +1,881 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+/* LOCK SCROLL */
+.lock-scroll {
+  overflow: hidden;
+}
+
+/* COVER */
+.cover {
+  position: fixed;
+  inset: 0;
+  background: url('https://images.pexels.com/photos/35204343/pexels-photo-35204343.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.cover-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1.5s ease;
+}
+
+.cover-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cover-content p {
+  margin-bottom: 20px;
+}
+
+.cover-content button {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.cover-content button:hover {
+  background: #ddd;
+}
+
+/* MAIN CONTENT */
+.hidden {
+  display: none;
+}
+
+.hero {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+.content {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #eee;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cover-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* URL NAME */
+.guest-label {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+#guestName {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* HERO WEDDING */
+.hero-wedding {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-size: 300% 300%;
+  animation: overlayMove 8s ease-in-out infinite;
+
+    /* Gradient elegan */
+      background: rgba(0,0,0,0.35);
+  
+}
+
+/* ANIMASI OVERLAY */
+@keyframes overlayMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* CONTENT */
+.hero-content {
+    margin-top: 18vh;
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+
+  /* INI KUNCINYA */
+  transform: translateY(80px);
+}
+
+/* JARAK TEKS */
+.hero-content .subtitle {
+  margin-bottom: 8px;
+}
+
+.hero-content h1 {
+  margin: 12px 0 6px;
+}
+
+.hero-content .date {
+  margin-bottom: 200px; /* JARAK KE COUNTDOWN */
+}
+
+/* COUNTDOWN LEBIH KE BAWAH */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.countdown div {
+  width: 70px;              /* KUNCI LURUS */
+  text-align: center;
+}
+
+.countdown span {
+ display: block;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.countdown small {
+ display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .countdown {
+    gap: 15px;
+  }
+
+  .countdown span {
+    font-size: 24px;
+  }
+}
+
+/* HERO SLIDER */
+.hero-wedding {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+
+}
+
+.hero-slide {
+  position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.2); /* Mulai dari posisi agak zoom */
+    transition: opacity 2000ms ease-in-out, transform 8000ms linear;
+    z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+    transform: scale(1); /* Bergerak mengecil perlahan ke ukuran normal */
+    z-index: 2;
+}
+
+.hero-overlay {
+position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+    z-index: 3;
+}
+
+/* css halaman dua */
+
+/* WEDDING DATES */
+.wedding-dates {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+/* BACKGROUND */
+.dates-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* OVERLAY */
+.dates-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 252, 245, 0.88);
+  z-index: 3;
+}
+
+/* CONTENT */
+.dates-content {
+  position: relative;
+  z-index: 34;
+  width: 100%;
+  max-width: 1100px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* TITLE */
+.dates-title {
+  font-size: 48px;
+  margin-bottom: 60px;
+}
+
+.dates-title span {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+/* BOX */
+.dates-box {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 60px;
+}
+
+/* ITEM */
+.date-item {
+  width: 100%;
+  max-width: 400px;
+}
+
+.date-item h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.date,
+.time {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.venue {
+  margin: 25px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* DIVIDER */
+.divider {
+  width: 1px;
+  background: #999;
+}
+
+/* BUTTON */
+.maps-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid #222;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.maps-btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .dates-title {
+    font-size: 36px;
+  }
+
+  .dates-box {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
+/* HALAMAN GALERY */
+.gallery-section {
+    padding: 30px 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.gallery-header-minimal {
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.couple-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin: 0;
+}
+
+.sub-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+/* Slider dengan Fitur Geser Otomatis */
+.slider-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Mengunci posisi geser */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Geser halus di iOS */
+    scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar di Chrome/Safari */
+}
+
+.slider-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.slide {
+    flex: 0 0 70%; /* Ukuran foto 70% dari layar agar foto sebelah terlihat sedikit */
+    scroll-snap-align: start; /* Mengunci foto di sisi kiri saat geser */
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+
+/* HALAMAN RSVP */
+
+/* Styling Dasar */
+.rsvp-section {
+    background-color: #fcfbf7; /* Warna latar krem pucat sesuai gambar */
+    padding: 60px 20px;
+    font-family: 'Serif', 'Georgia', serif;
+    color: #333;
+    text-align: center;
+}
+
+.container-rsvp {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.rsvp-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Form Styling */
+.rsvp-form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: red;
+}
+
+/* Input & Select Underline Style */
+.input-group input, 
+.input-group select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    outline: none;
+    border-radius: 0;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+/* Button Styling */
+.btn-konfirmasi {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.btn-konfirmasi:hover {
+    background-color: #555;
+}
+
+/* ucapan */
+/* Ucapan Section */
+.ucapan-section {
+    background-color: #333; /* Warna gelap sesuai gambar */
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Mencegah elemen anak keluar jalur */
+}
+
+.ucapan-container {
+display: flex;
+gap: 40px;
+max-width: 1100px;
+margin: auto;
+}
+
+.ucapan-left {
+    flex: 1;
+    min-width: 300px;
+    color: #fff;
+}
+
+.title-serif {
+    font-family: 'Georgia', serif;
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+.title-serif span {
+    display: block;
+    font-family: 'Cursive', 'Brush Script MT', cursive;
+    font-size: 3rem;
+    margin-left: 50px;
+    margin-top: -20px;
+}
+
+.ucapan-right {
+    flex: 1.5;
+    min-width: 350px;
+}
+
+.ucapan-card {
+  background: rgb(241, 241, 241);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.count-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.ucapan-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.ucapan-card input,
+.ucapan-card textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#btnUcapan {
+  padding: 10px;
+  background: #9e9e9e;
+  color: rgb(243, 243, 243);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btnUcapan:hover {
+  background: #727171;
+}
+
+.ucapan-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ucapan-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.ucapan-item.animate {
+  animation: popIn 0.4s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.icon {
+  font-size: 2rem;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-msg {
+  margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+    .ucapan-container {
+    flex-direction: column;
+    }
+    .ucapan-left,
+    .ucapan-right {
+      min-width: unset;
+      width: 100%;
+    }
+    .title-serif span {
+      margin-left: 0;
+      margin-top: 5px;
+      display: block;
+      font-size: 2rem;
+    }
+    .ucapan-card {
+      padding: 20px;
+    }
+    }
+
+
+
+
+/* halaman akhir */
+/* Styling Amplop Digital */
+.gift-section {
+    padding: 80px 20px;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.bank-card {
+    background: white;
+    max-width: 350px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.account-number {
+    font-size: 1.5rem;
+    font-weight:initial;
+    margin: 20px 0 20px;
+}
+
+.btn-copy {
+    background: #333;
+    color: rgb(255, 253, 253);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* Styling Section Penutup */
+.closing-section {
+    position: relative;
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/35204350/pexels-photo-35204350.jpeg') no-repeat center center/cover; /* Ganti dengan foto golf Anda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.closing-section .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Memberi efek gelap agar teks terbaca */
+}
+
+.closing-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+
+/* Container Oval untuk Logo */
+.logo-oval {
+    width: 90px;           /* Lebar diperkecil */
+    height: 150px;         /* Tinggi disesuaikan agar proporsional */
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-radius: 100px;  /* Membuat bentuk oval sempurna */
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+}
+
+/* Ukuran Gambar Logo di Dalamnya */
+.logo-oval img {
+    width: 120px;           /* Gambar akan mengikuti lebar container */
+    max-width: 100px;       /* Membatasi lebar maksimal logo di dalam oval */
+    object-fit: contain;
+}
+
+/* Penyesuaian Teks Terimakasih agar tidak terlalu jauh */
+.closing-thanks {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;     /* Ukuran font sedikit dikecilkan agar seimbang */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.closing-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    margin-top: 50px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* music */
+.music-controller {
+    margin: 30px 0;
+}
+
+.btn-music {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px); /* Efek kaca */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-music:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Animasi tombol saat musik menyala */
+.playing {
+    animation: pulse-white 2s infinite;
+}
+
+@keyframes pulse-white {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+
+/* FOOTER */
+.footer-section {
+    padding: 40px 20px;
+    background-color: #fcfaf5; /* Sesuaikan dengan background web Anda */
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.copyright {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.vendor-info {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #888;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #333; /* Warna ikon saat disentuh */
+    transform: translateY(-3px);
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #222;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
