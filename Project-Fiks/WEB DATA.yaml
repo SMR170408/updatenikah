@@ -62,6 +62,16 @@ features:
 
 &nbsp; max\_messages: 10   # Jumlah maksimal ucapan yang ditampilkan di layar
 
+\# 5. Skema Poto Di IMG
+Lock : Hero.jpg/png
+Halaman awal : Awal 1.jpg/png
+               Awal 2.jpg/png
+               Awal 3.jpg/png
+Backgroud: Awal 2.jpg/png
+Galery: Galery1.jpg/Png
+        Galery2.jpg/png
+        Galeri3.jpg/png
+        dsn
 
 
 
