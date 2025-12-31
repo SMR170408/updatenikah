@@ -1,0 +1,72 @@
+ile ini berfungsi sebagai dokumentasi konfigurasi terpusat. Meskipun versi Vanilla JS ini tidak otomatis membaca file ini (karena butuh build tool), menyimpannya di folder proyek sangat membantu agar Anda atau developer lain tahu \*data apa saja\* yang perlu diubah di dalam kode.
+
+
+
+```yaml
+
+\# ================= CONFIGURASI PROYEK =================
+
+\# File ini berisi referensi variabel utama untuk kemudahan konfigurasi.
+
+
+
+\# 1. DATA PERNIKAHAN
+
+wedding:
+
+&nbsp; h1\_name: "Annisa"       # Nama Mempelai Wanita
+
+&nbsp; h1\_name: "Al Thoriq"    # Nama Mempelai Pria
+
+&nbsp; date\_iso: "2026-01-18T08:00:00"  # Format Waktu (ISO) untuk Countdown
+
+&nbsp; date\_display: "Sabtu, 18 Januari 2026"
+
+&nbsp; location\_name: "SMK Muhammadiyah 2 Kadungora, Garut"
+
+
+
+\# 2. API BACKEND (Google Apps Script)
+
+api:
+
+&nbsp; script\_url: "https://script.google.com/macros/s/AKfycbyHqm2TnL7lyux44hEmej9\_2JN\_9ysdRFUpgqrnQECSKnvCj\_czjnCyynhzo55CGyAD/exec"
+
+&nbsp; # Note: Pastikan permission di Google Script di-set ke "Anyone"
+
+
+
+\# 3. ASSETS (File Media)
+
+assets:
+
+&nbsp; music\_file: "assets/music/wedding-song.mp3"
+
+&nbsp; hero\_image: "assets/img/Hero.jpg"
+
+&nbsp; closing\_image: "assets/img/Awal 2.jpg"
+
+&nbsp; Spreadsheet: https://docs.google.com/spreadsheets/d/1k61Xav-oV8EG8AW7g69GD2dlZjOJiYcOYqDfUzQlMWE/edit?usp=sharing
+
+
+
+
+
+\# 4. FITUR
+
+features:
+
+&nbsp; enable\_music: true
+
+&nbsp; enable\_countdown: true
+
+&nbsp; max\_messages: 10   # Jumlah maksimal ucapan yang ditampilkan di layar
+
+
+
+
+
+
+
+
+
